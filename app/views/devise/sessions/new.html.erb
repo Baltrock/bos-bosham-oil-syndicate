@@ -1,6 +1,8 @@
 <h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+  data: {turbo: false}) do |f| %>
+
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
@@ -17,7 +19,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in", index_url: index_path("Log in") %>
+    <%= f.button :submit, "Log in", user_root_url: user_root_path(resource_name) %>
   </div>
 <% end %>
 
