@@ -1,2 +1,31 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="components/_index.scss" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Website Homepage</title>
+</head>
+<div class="index">
+  <div class="container">
+    <h1>Welcome to the Bosham Oil Syndicate</h1>
+    <h3>Please log in to access your account and view the BOS fuel</h3>
+    <br>
+    <div class="button">
+      <%= link_to "About the site", about_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+    </div>
+    <br>
+    <div class="button">
+      <%= link_to "Contacts list", contact_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+    </div>
+    <br>
+    <div class="button1">
+      <%#= link_to "Become a new Syndicator", syndicator_new_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+    </div>
+    <br>
+    <div class="button1">
+      <%# <%= link_to "Admin to add new company", company_new_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+    </div>
+    <br>
+  </div>
+</div>

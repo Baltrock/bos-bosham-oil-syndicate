@@ -1,11 +1,27 @@
 <h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-inputs">
     <%= f.input :email,
                 required: false,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
+    <%= f.input :fuel_limit,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "fuel_limit" }%>
+    <%= f.input :present_fuel_content,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "present_fuel_content" }%>
+    <%= f.input :fuel_needed,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "fuel_needed" }%>
+    <%= f.input :password,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" } %>
     <%= f.input :password,
                 required: false,
                 input_html: { autocomplete: "current-password" } %>
