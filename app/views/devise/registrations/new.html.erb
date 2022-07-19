@@ -8,18 +8,6 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
-    <%= f.input :fuel_limit,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "fuel_limit" }%>
-    <%= f.input :present_fuel_content,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "present_fuel_content" }%>
-    <%= f.input :fuel_needed,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "fuel_needed" }%>
     <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
@@ -27,10 +15,6 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
-    <%= f.input :comment,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "comment" }%>
   </div>
 
   <div class="form-actions">
