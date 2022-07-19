@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
   root to: "pages#home"
-  get "about", to: "pages#about"
-  get "contact", to: "pages#contact"
-  get "information_form", to: "information_form#index"
+  get "about", to: "pages#about", as: :about
+  get "contact", to: "pages#contact", as: :contact
+  get "information_form", to: "information_form#index", as: :form_for_admin
+  get "index", to: "pages#index", as: :index
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
