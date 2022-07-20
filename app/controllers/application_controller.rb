@@ -9,13 +9,13 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:fuel_limit, :current_fuel_volume, :required_fuel, :comment])
   end
 
+  protected
+
   def after_sign_up_path(resource)
-    user_root_path(current_user)
+    user_root_path(current_user) || request.referrer
   end
 
   def after_log_in_path(resource)
-    user_root_path(current_user)
+    user_root_path(current_user) || request.referrer
   end
-
-
 end
