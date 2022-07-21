@@ -1,8 +1,8 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   before_action :set_information_form, only: %i[ show edit update destroy ]
 
   # GET /information_forms or /information_forms.json
-  def index
+  def primary
     @user = User.all
   end
 
@@ -10,7 +10,7 @@ class UserController < ApplicationController
   def show
   end
 
-  def users
+  def user
   end
 
   # GET /user/new

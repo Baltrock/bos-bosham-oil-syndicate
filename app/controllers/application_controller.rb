@@ -18,4 +18,11 @@ class ApplicationController < ActionController::Base
   def after_log_in_path(resource)
     user_root_path(current_user) || request.referrer
   end
+
+  private
+
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
+
 end

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
   get "about", to: "pages#about", as: :about
   get "contact", to: "pages#contact", as: :contact
-  get "information_form", to: "information_form#index", as: :form_for_admin
-  get 'users' => 'secure#index', as: :user_root
+  get "information_form", to: "information_form#index", as: :form_for_user
+  get 'users' => 'users#primary', as: :user_root
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
