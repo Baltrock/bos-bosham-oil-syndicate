@@ -57,10 +57,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_19_155831) do
 
   create_table "information_forms", force: :cascade do |t|
     t.string "name"
+    t.string "address"
+    t.string "email_address"
     t.string "fuel_capacity"
     t.string "current_fuel_content"
     t.string "fuel_needed"
-    t.string "comment"
+    t.string "instructions_for_delivery"
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
