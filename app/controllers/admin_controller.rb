@@ -1,9 +1,9 @@
 class AdminController < ApplicationController
-  before_action :set_information_form, only: %i[ show edit update ]
+  before_action :set_information_form, only: %i[ show edit update destroy]
 
   # GET /information_forms or /information_forms.json
   def primary
-    @admin = Admin.all
+    @admin = Admin.1
   end
 
   # GET /user/1 or /user/1.json

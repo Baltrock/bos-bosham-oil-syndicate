@@ -3,6 +3,6 @@ class AddSyndicationToUser < ActiveRecord::Migration[7.0]
     add_column :users, :fuel_limit, :string
     add_column :users, :present_fuel_content, :string
     add_column :users, :fuel_needed, :string
-    add_column :users, :comment, :string
+    add_column :users, :instructions_for_delivery, :string
   end
 end
