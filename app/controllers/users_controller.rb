@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # GET /user/1 or /user/1.json
   def show
+    @fuel_needed = [write the active record method to fetch these values, and then reduce them to a sum]
   end
 
   def user

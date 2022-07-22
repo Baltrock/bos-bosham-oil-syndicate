@@ -1,6 +1,6 @@
-<h2>Log in</h2>
+<h2>Admins log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+<%= simple_form_for(resource, as: resource_name, url: new_admin_session_path(resource_name),
   data: {turbo: false}) do |f| %>
 
   <div class="form-inputs">
@@ -19,6 +19,6 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in", admin_url: admin_session_path(resource_name) %>
+    <%= f.button :submit, "Admin Log in", admin_url: admin_session_path(resource_name) %>
   </div>
 <% end %>

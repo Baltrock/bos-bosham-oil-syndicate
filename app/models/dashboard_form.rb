@@ -1,0 +1,2 @@
+class DashboardForm < ApplicationRecord
+end

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :dashboard_forms
   devise_for :views
   resources :information_forms
+  resources :dashboard_form
   devise_for :admins
   devise_for :users
   root to: "pages#home"

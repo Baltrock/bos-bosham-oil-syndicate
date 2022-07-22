@@ -3,7 +3,7 @@ class AdminController < ApplicationController
 
   # GET /information_forms or /information_forms.json
   def primary
-    @admin = Admin.1
+    # @admin = Admin.1
   end
 
   # GET /user/1 or /user/1.json

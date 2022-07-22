@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_19_155831) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_22_144655) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -55,6 +55,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_19_155831) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "dashboard_forms", force: :cascade do |t|
+    t.string "company_name"
+    t.string "address"
+    t.integer "pounds_per_litre"
+    t.string "comment"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "information_forms", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -81,7 +91,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_19_155831) do
     t.string "fuel_limit"
     t.string "present_fuel_content"
     t.string "fuel_needed"
-    t.string "comment"
+    t.string "instructions_for_delivery"
     t.string "user_url"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

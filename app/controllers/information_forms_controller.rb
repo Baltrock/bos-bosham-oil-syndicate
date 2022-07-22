@@ -6,8 +6,14 @@ class InformationFormsController < ApplicationController
     @information_forms = InformationForm.all
   end
 
+
   # GET /information_forms/1 or /information_forms/1.json
   def show
+
+  end
+
+  def key_info
+    @fuel_needed = fuel_needed.all
   end
 
   # GET /information_forms/new

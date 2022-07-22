@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dashboard forms</h1>
+
+<div id="dashboard_forms">
+  <% @dashboard_forms.each do |dashboard_form| %>
+    <%= render dashboard_form %>
+    <p>
+      <%= link_to "Show this company", dashboard_form %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New company", new_dashboard_form_path %>
+<%= link_to "Back to Admin Page", admin_session_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
