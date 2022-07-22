@@ -77,7 +77,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_19_155831) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin"
+    t.boolean "admin", default: false, null: false
     t.string "fuel_limit"
     t.string "present_fuel_content"
     t.string "fuel_needed"
