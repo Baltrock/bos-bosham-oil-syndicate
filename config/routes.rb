@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # devise_for :views
 
-  resources :dashboard_form
+
   devise_for :admins
+    resources :dashboard_form
   devise_for :users, controllers: { registrations: "registrations" }
     resources :information_forms
 
