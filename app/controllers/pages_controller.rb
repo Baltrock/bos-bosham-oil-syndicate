@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: :home
-  skip_before_action :verify_authenticity_token
-  skip_before_action :authenticate_user!, :only => "reply", :raise => false
+  # skip_before_action :verify_authenticity_token
+  before_action :authenticate_user!
+  # skip_before_action :authenticate_user!, :only => "reply", :raise => false
 
   def home
   end

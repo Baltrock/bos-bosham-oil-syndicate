@@ -49,6 +49,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144655) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.boolean "is_guide", default: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
@@ -66,9 +71,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144655) do
   end
 
   create_table "information_forms", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.string "email_address"
     t.string "fuel_capacity"
     t.string "current_fuel_content"
     t.string "fuel_needed"
@@ -85,6 +87,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144655) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.boolean "is_guide", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "admin", default: false, null: false

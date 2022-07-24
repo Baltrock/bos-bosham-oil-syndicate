@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_action :set_information_form, only: %i[ show edit update destroy ]
 
   # GET /information_forms or /information_forms.json
@@ -11,12 +12,15 @@ class UsersController < ApplicationController
     @fuel_needed = @fuel_needed
     @name = @name# = all.[write the active record method to fetch these values, and reduce them to a sum]
   #   total =
+    @user = current_user
     @user = User.find(params[:id])
 
       respond_to do |format|
         format.html # show.html.erb
         format.json { render json: @user }
       end
+      info = JSON.parse(url_s)
+      @infos = info["value"]
   end
   # end
 

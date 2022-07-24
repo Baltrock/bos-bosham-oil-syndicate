@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
-  devise_for :views
-  resources :information_forms
+  root to: "pages#home"
+  # devise_for :views
+
   resources :dashboard_form
   devise_for :admins
-  devise_for :users
-  root to: "pages#home"
-  get "admin_zone", to:"pages#admin_zone", as: :admin_zone
+  devise_for :users, controllers: { registrations: "registrations" }
+    resources :information_forms
+
+
   get "about", to: "pages#about", as: :about
-  get "contact", to: "pages#contact", as: :contact
   get "information_form", to: "information_form#index", as: :form_for_user
   get "dashboard_form", to: "dashboard_form#index", as: :form_for_admin
   get 'users' => 'users#primary', as: :users_root
@@ -18,14 +19,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :information_form do
-    collection do
-      get :top
-    end
-  end
-  resources :dashboard_form do
-    collection do
-      get :top
-    end
-  end
+  # resources :information_form do
+  #   collection do
+  #     get :top
+  #   end
+  # end
+  # resources :dashboard_form do
+  #   collection do
+  #     get :top
+  #   end
+  # end
 end

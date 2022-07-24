@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts "Cleaning database..."
+User.destrroy_all
+
+puts 'Creating Admin'
+User.create(email: "sanrmurphy.family@btinternet.com", password: "BeaglesAreCool", is_admin: true)
+puts 'Admin is created'
+
 InformationForm.destroy_all
 puts "Finished!"
 admin_user = User.new()
