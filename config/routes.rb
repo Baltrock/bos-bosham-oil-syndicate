@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :dashboard_forms
   devise_for :views
   resources :information_forms
   resources :dashboard_form
@@ -11,7 +10,7 @@ Rails.application.routes.draw do
   get "contact", to: "pages#contact", as: :contact
   get "information_form", to: "information_form#index", as: :form_for_user
   get "dashboard_form", to: "dashboard_form#index", as: :form_for_admin
-  get 'users' => 'users#primary', as: :user_root
+  get 'users' => 'users#primary', as: :users_root
   get 'admin' => 'admin#primary', as: :admin_root
 
   # get 'admin' => 'admin#primary', as: :admin_root
