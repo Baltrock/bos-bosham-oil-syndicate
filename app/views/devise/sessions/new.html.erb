@@ -5,7 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :email,
-                required: false,
+                required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" } %>
     <%= f.input :password,
@@ -19,12 +19,10 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in", user_url: user_session_path(resource_name) %>
+    <%= f.button :submit, "User Log in", user_url: user_session_path(resource_name) %>
   </div>
 
-  <div class="button">
-    <%= link_to "Admin", new_admin_session_path, class: "nav-link" %>
-  </div>
+
 <% end %>
 
 

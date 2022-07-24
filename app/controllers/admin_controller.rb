@@ -8,6 +8,7 @@ class AdminController < ApplicationController
 
   # GET /user/1 or /user/1.json
   def show
+    @fuel_limit.all
   end
 
   # GET /user/1/edit

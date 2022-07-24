@@ -10,4 +10,12 @@
 <p>
  <strong>Fuel Needed: </strong>
  <%= @fuel_needed %>
+
+  <p>Name: <%= @user.username %></p>
+  <p>Ideas:</p>
+<ul>
+  <% @user.ideas.each do |idea| %>
+    <li><%= idea.name %></li>
+  <% end %>
+</ul>
 </p>

@@ -8,8 +8,17 @@ class UsersController < ApplicationController
 
   # GET /user/1 or /user/1.json
   def show
-    @fuel_needed = [write the active record method to fetch these values, and then reduce them to a sum]
+    @fuel_needed = @fuel_needed
+    @name = @name# = all.[write the active record method to fetch these values, and reduce them to a sum]
+  #   total =
+    @user = User.find(params[:id])
+
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @user }
+      end
   end
+  # end
 
   def user
   end

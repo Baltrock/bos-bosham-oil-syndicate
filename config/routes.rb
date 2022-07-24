@@ -24,4 +24,9 @@ Rails.application.routes.draw do
       get :top
     end
   end
+  resources :dashboard_form do
+    collection do
+      get :top
+    end
+  end
 end

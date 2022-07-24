@@ -5,5 +5,8 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
   # validates :name, uniqueness: { case_sensitive: false }
   include ActiveModel::Validations
+  validates :email, format: { with: /\A.*@.*\.com\z/ }
+  validates :password, uniqueness: false
+  has_many :users
   # validates_with AdminValidator
 end
