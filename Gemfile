@@ -3,8 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.3"
 
-gem "sidekiq"
-gem "sidekiq-failures", "~> 1.0"
+# gem "sidekiq"
+# gem "sidekiq-failures", "~> 1.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3", ">= 7.0.3.1"
@@ -32,7 +32,7 @@ gem 'rolify'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
-gem "pundit"
+# gem "pundit"
 
 gem "devise"
 # Use Redis adapter to run Action Cable in production
