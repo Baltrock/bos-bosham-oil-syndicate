@@ -1,5 +1,5 @@
 class AdminController < ApplicationController
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
   before_action :set_information_form, only: %i[ show edit update destroy]
 
   # GET /information_forms or /information_forms.json

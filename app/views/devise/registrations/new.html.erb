@@ -1,31 +1,51 @@
-<h2>Sign up</h2>
+<div class="pagey">
+    <div class="footsteps-up">
+      <%# <%= image_tag "feetdown.png", class: "footsteps-up" %>
+        <div class="page">
 
-<%= simple_form_for(resource, as: resource_name, url: user_registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+          <h2 class="signup"><strong>Sign up</strong></h2>
+            <%= simple_form_for(resource, as: resource_name, url: user_registration_path(resource_name), data: {turbo: false}) do |f| %>
+              <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
+              <div class="form-inputs">
+                <%= f.input :email,
+                            required: true,
+                            autofocus: true,
+                            input_html: { autocomplete: "email" }%>
+                <%= f.input :password,
+                            required: true,
+                            hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                            input_html: { autocomplete: "new-password" } %>
+                <%= f.input :password_confirmation,
+                            required: true,
+                            input_html: { autocomplete: "new-password" } %>
+              </div>
+              <% if params[:status] %>
+                <%= f.input :status, as: :hidden, input_html: { value: params[:status][:status]} %>
+              <% end %>
+              <% if params[:status] && params[:status][:status] == "user" %>
+                <%= f.input :is_admin, disabled: false,
+                      required: true,
+                      autofocus: true,
+                      input_html: { checked: true , style: "display: none;" }%>
+              <% elsif  params[:user] && params[:user][:status]  == "admin" %>
+                <%= f.input :is_admin, disabled: false,
+                      required: true,
+                      autofocus: true,
+                      input_html: { checked: true , style: "display: none;" }%>
+              <% end %>
+              <div class="form-actions">
+                <%= f.button :submit, "Sign up", users_root: user_registration_path(resource_name) %>
+              </div>
+
+              <div class="button">
+                <%= link_to "Back to the Home Page", root_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+              </div>
+
+            <% end %>
+        </div>
+    </div>
   </div>
-
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up", users_root: user_registration_path(resource_name) %>
-  </div>
-
-  <div class="button">
-    <%= link_to "Back to the Home Page", root_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
-  </div>
-
-<% end %>
 
 <%= render "devise/shared/links" %>
 
@@ -33,14 +53,9 @@
 
 
 
-<div class="pagey">
-    <div class="footsteps-up">
-      <%# <%= image_tag "feetdown.png", class: "footsteps-up" %>
-        <div class="page">
 
-          <h2 class="signup"><strong>Sign up</strong></h2>
 
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
+          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">
               <%= f.input :email,
@@ -65,20 +80,7 @@
                           required: true,
                           autofocus: true,
                           input_html: { autocomplete: "location" } %>
-              <% if params[:status] %>
-                <%= f.input :status, as: :hidden, input_html: { value: params[:status][:status]} %>
-              <% end %>
-                <% if params[:status] && params[:status][:status] == "admin" %>
-                  <%= f.input :is_admin, disabled: false,
-                              required: true,
-                              autofocus: true,
-                              input_html: { checked: true , style: "display: none;" }%>
-                <% elsif  params[:user] && params[:user][:status]  == "admin" %>
-                <%= f.input :is_admin, disabled: false,
-                              required: true,
-                              autofocus: true,
-                              input_html: { checked: true , style: "display: none;" }%>
-                <% end %>
+
           <div class="row">
             <div class="col-6">
               <%= f.input :password,
@@ -101,5 +103,4 @@
           <% end %>
         </div>
     </div>
-    <%# <%= image_tag 'feetup.png', class: "footsteps-down" %>
   </div>

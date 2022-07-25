@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # devise_for :views
 
+  namespace :admin do
+    resources :users
+  end
 
   devise_for :admins
     resources :dashboard_form
@@ -12,7 +15,7 @@ Rails.application.routes.draw do
   get "about", to: "pages#about", as: :about
   get "information_form", to: "information_form#index", as: :form_for_user
   get "dashboard_form", to: "dashboard_form#index", as: :form_for_admin
-  get 'users' => 'users#primary', as: :users_root
+  get 'users' => 'users#primary', as: :user_root
   get 'admin' => 'admin#primary', as: :admin_root
 
   # get 'admin' => 'admin#primary', as: :admin_root
