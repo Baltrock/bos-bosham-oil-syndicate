@@ -3,7 +3,7 @@
   <h5>This is your dashboard for the Bosham Oil Syndicate *BOS*. Please select the button below and go to your company creator page. Once you have completed the form, you will be taken to the the Meeting Room.</h5>
   <h5>At the very bottom of the page. </h5>
   <h5>As updates are made to this site, key parts are likely to change, including a reset of the comment table every 24 hours and more interactive features.</h5>
-  <%= link_to "Company Input page", dashboard_forms_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
+  <%= link_to "Company Input page", dashboard_forms_path, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
 
 </div>
 
@@ -11,11 +11,11 @@
  <strong>Fuel Needed: </strong>
  <%= @fuel_needed %>
 
-  <p>Name: <%= @user.username %></p>
-  <p>Ideas:</p>
-<ul>
-  <% @user.ideas.each do |idea| %>
-    <li><%= idea.name %></li>
-  <% end %>
-</ul>
-</p>
+  <%# <p>Name: <%= @user %></p>
+  <%# <p>Fuel Needed:</p> %>
+<%# <ul> %>
+  <%# <% @user.fuel_needed.each do |fuel_needed| %>
+    <%# <li><%= fuel_needed %></li>
+  <%# <% end %>
+<%# </ul> %>
+<%# </p> %>
