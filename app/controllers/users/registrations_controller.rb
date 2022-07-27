@@ -4,9 +4,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def after_sign_in_path_for(resource)
     if resource.is_admin
-      :admins
+      :admins_path
     elsif resource.is_admin == false
-      :users
+      :users_path
     else
       super
     end

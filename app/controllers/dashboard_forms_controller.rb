@@ -8,6 +8,7 @@ class DashboardFormsController < ApplicationController
 
   # GET /dashboard_forms/1 or /dashboard_forms/1.json
   def show
+    @fuel_needed = @fuel_needed.all
   end
 
   # GET /dashboard_forms/new

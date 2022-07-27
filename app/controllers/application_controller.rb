@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
     admin_root_path(current_user) || request.referrer
   end
 
-def after_log_in_path_for(admin)
+  def after_log_in_path_for(admin)
     admin_root_path(resource) || request.referrer
   end
 

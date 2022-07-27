@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   devise_for :admins
     resources :dashboard_form
-  devise_for :users, controllers: { registrations: "registrations" }
+  devise_for :users, controllers: { registrations: "users/registrations" }
     resources :information_forms
 
 
@@ -18,7 +18,11 @@ Rails.application.routes.draw do
   get 'users' => 'users#primary', as: :user_root
   get 'admin' => 'admin#primary', as: :admin_root
 
-  # get 'admin' => 'admin#primary', as: :admin_root
+
+end
+
+
+# get 'admin' => 'admin#primary', as: :admin_root
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -33,4 +37,3 @@ Rails.application.routes.draw do
   #     get :top
   #   end
   # end
-end
