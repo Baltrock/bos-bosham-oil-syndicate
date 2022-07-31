@@ -5,8 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # validates :email, presence: true
-  validates :is_admin, inclusion: [true]
+  validates :admin, inclusion: [true]
+  # validates :is_user, inclusion: [true]
   validates :email, format: { with: /\A.*@.*\.com\z/ }
   validates :password, uniqueness: false
-  has_many :information_form
+  has_many :information_forms
 end

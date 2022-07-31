@@ -14,6 +14,6 @@ puts 'Admin is created'
 
 InformationForm.destroy_all
 puts "Finished!"
-admin_user = User.new()
-admin_user.admin = true
-admin_user.save
+# admin_user = User.new()
+# admin_user.admins = true
+# admin_user.save

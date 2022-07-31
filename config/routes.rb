@@ -1,20 +1,25 @@
 Rails.application.routes.draw do
+  mount ForestLiana::Engine => '/forest'
   root to: "pages#home"
   # devise_for :views
 
-  namespace :admin do
-    resources :users
-  end
+  # namespace :admin do
+  #   resources :users
+  # end
+
+  # devise_for :users
+  # mount IsAdmin::Engine => '/', as: 'rails_admin'
+
+  get '/information_forms', to:'information_forms#index', as: :form_for_user
+  get '/dashboard_forms', to: 'dashboard_forms#index', as: :form_for_admin
 
   devise_for :admins
-    resources :dashboard_form
+    resources :dashboard_forms, except: %i[index]
   devise_for :users, controllers: { registrations: "users/registrations" }
     resources :information_forms
 
 
   get "about", to: "pages#about", as: :about
-  get "information_form", to: "information_form#index", as: :form_for_user
-  get "dashboard_form", to: "dashboard_form#index", as: :form_for_admin
   get 'users' => 'users#primary', as: :user_root
   get 'admin' => 'admin#primary', as: :admin_root
 

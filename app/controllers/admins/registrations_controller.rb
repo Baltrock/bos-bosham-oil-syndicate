@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class Admins::RegistrationsController < Devise::RegistrationsController
-  # before_action :configure_sign_up_params, only: [:create]
-  # before_action :configure_account_update_params, only: [:update]
+  before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
   # def new
@@ -13,9 +13,9 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   protected
 
   def after_sign_in_path_for(resource)
-    if resource.is_admin
+    if resource.admin
       :admins
-    elsif resource.is_admin == false
+    elsif resource.admin == false
       :users
     else
       super
@@ -40,6 +40,9 @@ class Admins::RegistrationsController < Devise::RegistrationsController
   # def destroy
   #   super
   # end
+
+  def ActionController
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign

@@ -1,9 +1,9 @@
 class DashboardFormsController < ApplicationController
-  before_action :set_dashboard_form, only: %i[ show edit update destroy ]
+  before_action :set_dashboard_forms, only: %i[ show new edit update destroy ]
 
   # GET /dashboard_forms or /dashboard_forms.json
   def index
-    @dashboard_forms = DashboardForm.all
+    @dashboard_form = DashboardForm.all
   end
 
   # GET /dashboard_forms/1 or /dashboard_forms/1.json
@@ -39,7 +39,7 @@ class DashboardFormsController < ApplicationController
   def update
     respond_to do |format|
       if @dashboard_form.update(dashboard_form_params)
-        format.html { redirect_to dashboard_form_url(@dashboard_form), notice: "Dashboard form was successfully updated." }
+        format.html { redirect_to dashboard_forms_url(@dashboard_form), notice: "Dashboard form was successfully updated." }
         format.json { render :show, status: :ok, location: @dashboard_form }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -60,7 +60,7 @@ class DashboardFormsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_dashboard_form
+    def set_dashboard_forms
       @dashboard_form = DashboardForm.find(params[:id])
     end
 

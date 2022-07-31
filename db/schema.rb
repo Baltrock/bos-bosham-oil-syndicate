@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_22_144655) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_28_141350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -71,6 +71,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144655) do
   end
 
   create_table "information_forms", force: :cascade do |t|
+    t.string "name"
     t.string "fuel_capacity"
     t.string "current_fuel_content"
     t.string "fuel_needed"
@@ -79,6 +80,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_22_144655) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_information_forms_on_user_id"
+  end
+
+  create_table "is_admins", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

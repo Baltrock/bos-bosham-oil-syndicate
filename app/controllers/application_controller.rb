@@ -14,14 +14,14 @@ class ApplicationController < ActionController::Base
   respond_to :html, :json
   protected
 
-  def after_sign_in_path_for(user)
-    stored_location_for(resource) ||
-     if user.is_admin?
-       admin_root_path
-     else
-       user_root_path
-     end
-  end
+  # def after_sign_in_path_for(user)
+  #   stored_location_for(resource) ||
+  #    if user.is_admin?
+  #      admin_root_path
+  #    else
+  #      user_root_path
+  #    end
+  # end
 
   def after_sign_up_path(resource)
     user_root_path(current_user) || request.referrer
