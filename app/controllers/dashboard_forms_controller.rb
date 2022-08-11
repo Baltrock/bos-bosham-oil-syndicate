@@ -3,7 +3,7 @@ class DashboardFormsController < ApplicationController
 
   # GET /dashboard_forms or /dashboard_forms.json
   def index
-    @dashboard_form = DashboardForm.all
+    @dashboard_forms = DashboardForm.all
   end
 
   # GET /dashboard_forms/1 or /dashboard_forms/1.json
@@ -61,7 +61,7 @@ class DashboardFormsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_dashboard_forms
-      @dashboard_form = DashboardForm.find(params[:id])
+      # @dashboard_forms = DashboardForm.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

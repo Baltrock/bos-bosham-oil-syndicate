@@ -6,9 +6,10 @@
   <% @information_forms.each do |information_form| %>
     <%= render information_form %>
     <p>
-      <%= link_to "Show this information form", information_form %>
+      <%= link_to "Show this information form", information_forms %>
     </p>
   <% end %>
 </div>
 
 <%= link_to "New information form", new_information_form_path %>
+<%= link_to "Back to User Main Page", user_registration_url, class: "btn btn-pink text-grey text-uppercase rounded-pill fw-bold" %>
